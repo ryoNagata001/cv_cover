@@ -21,6 +21,7 @@ def readImage():
     else:
         fname = input('image file -> ')
     image = cv2.imread(fname)
+    print(image.shape)
     if image is None:
         print('no image file:', fname)
         sys.exit(1)
