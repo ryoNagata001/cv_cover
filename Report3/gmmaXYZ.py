@@ -12,9 +12,9 @@ def changeGamma(val):
     planes = cv2.split(imgXYZ)
     for i in range(len(tracks)):
         val = cv2.getTrackbarPos(tracks[i], winRes)
-        planes = cv2.LUT(planes[i], lookUpTable)
+        planes[i] = cv2.LUT(planes[i], lookUpTable[val])
     imgXYZ = cv2.merge(planes)
-    cv2.imshow(winRes, cv2.cvtCOlor(imgXYZ, cv2.COLOR_XYZ2BGR))
+    cv2.imshow(winRes, cv2.cvtColor(imgXYZ, cv2.COLOR_XYZ2BGR))
 
 
 def main():
