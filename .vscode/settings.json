@@ -1,5 +1,7 @@
 {
     "python.linting.pylintArgs": [
         "--extension-pkg-whitelist=cv2"
-    ]
+    ],
+    "python.jediEnabled": false,
+    "python.linting.pylintEnabled": true
 }
