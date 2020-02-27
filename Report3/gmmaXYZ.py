@@ -10,6 +10,8 @@ def changeGamma(val):
     global img, lookUpTable
     imgXYZ = cv2.cvtColor(img, cv2.COLOR_BGR2XYZ)
     planes = cv2.split(imgXYZ)
+    print(planes)
+    print(imgXYZ)
     for i in range(len(tracks)):
         val = cv2.getTrackbarPos(tracks[i], winRes)
         planes[i] = cv2.LUT(planes[i], lookUpTable[val])

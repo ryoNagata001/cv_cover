@@ -7,8 +7,8 @@ from grayscale import readImage
 def main():
     img = readImage()
     cv2.imshow('Original', img)
-    scaleX = 16
-    scaleY = 9
+    scaleX = 2
+    scaleY = 3
     rows, cols = img.shape[:2]
     size = (cols * scaleX, rows * scaleY)
 

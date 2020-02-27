@@ -13,6 +13,7 @@ def main():
     planes[0] = np.ones(planes[0].shape[:2], np.uint8) * default_h
     planes[1] = np.ones(planes[1].shape[:2], np.uint8) * default_s
     imgHSV = cv2.merge(planes)
+    print(imgHSV)
     cv2.imshow('Sepia', cv2.cvtColor(imgHSV, cv2.COLOR_HSV2BGR))
 
     cv2.waitKey(0)

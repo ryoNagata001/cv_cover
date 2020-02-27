@@ -3,7 +3,7 @@ from grayscale import readImage
 from gammaCV import gammaLUT
 
 winRes = 'Result'
-tracks = ('R', 'G', 'B')
+tracks = ('H', 'L', 'S')
 
 
 def changeGamma(val):
