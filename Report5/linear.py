@@ -3,13 +3,14 @@ import numpy as np
 import time
 from grayscale import readImage
 
+
 def myFilter2D(src, kernel):
     drows, dcols = src.shape[:2]
     dst = np.zeros((drows, dcols), np.float64)
     krows, kcols = kernel.shape[:2]
-    ahgt = krows //2
-    awth = kcols //2
-    org  = cv2.copyMakeBorder(src, ahgt, ahgt, awth, awth, cv2.BORDER_DEFAULT)
+    ahgt = krows // 2
+    awth = kcols // 2
+    org = cv2.copyMakeBorder(src, ahgt, ahgt, awth, awth, cv2.BORDER_DEFAULT)
     for drow in range(0, drows):
         for dcol in range(0, dcols):
             r = 0.0
@@ -17,7 +18,8 @@ def myFilter2D(src, kernel):
                 for kcol in range(0, kcols):
                     r += org[drow+krow, dcol+kcol] * kernel[krow, kcol]
             dst[drow, dcol] = r
-        return dst
+    return dst
+
 
 def main():
     img = readImage()
@@ -25,7 +27,7 @@ def main():
     m = [[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]
     kernel = np.array(m)
     s = time.time()
-    
+
     tmp = myFilter2D(gray, kernel)
 
     print('time:', time.time()-s, 'sec')
